@@ -14,3 +14,10 @@ after_success:
   - docker build -t m4r14r1os/complex-multi-nginx ./nginx
   - docker build -t m4r14r1os/complex-multi-server ./server
   - docker build -t m4r14r1os/complex-multi-worker ./worker
+  #Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #Take those images and push them to docker hub
+  - docker push m4r14r1os/complex-multi-client
+  - docker push m4r14r1os/complex-multi-nginx
+  - docker push m4r14r1os/complex-multi-server
+  - docker push m4r14r1os/complex-multi-worker
