@@ -21,3 +21,15 @@ after_success:
   - docker push m4r14r1os/complex-multi-nginx
   - docker push m4r14r1os/complex-multi-server
   - docker push m4r14r1os/complex-multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ca-central-1"
+  app: "docker-course-multi-ebs"
+  env: "Docker-course-multi-ebs-env"
+  bucket_name: "elasticbeanstalk-ca-central-1-289913794490"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
