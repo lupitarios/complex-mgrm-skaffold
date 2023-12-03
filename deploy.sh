@@ -10,5 +10,5 @@ docker push m4r14r1os/complex-multi-server:$SHA
 docker push m4r14r1os/complex-multi-worker:$SHA
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=m4r14r1os/complex-multi-server:$SHA
-kubectl set image deployments/client-deployment server=m4r14r1os/complex-multi-client:$SHA
-kubectl set image deployments/worker-deployment server=m4r14r1os/complex-multi-worker:$SHA
+kubectl set image deployments/client-deployment client=m4r14r1os/complex-multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=m4r14r1os/complex-multi-worker:$SHA
