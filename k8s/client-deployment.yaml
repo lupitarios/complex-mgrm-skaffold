@@ -17,3 +17,7 @@ spec:
           image: m4r14r1os/complex-multi-client
           ports:
             - containerPort: 3000
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
